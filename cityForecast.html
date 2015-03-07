@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <a href="#/">&lt; Back</a>
+  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td>Date</td>
+        <td>Min</td>
+        <td>Max</td>
+        <td>Description</td>
+      </tr>
+      <tr ng-repeat="day in forecast">
+        <td>{{day.dt * 1000 | date:'MM-dd hh'}}</td>
+        <td>{{day.main.temp_min | number:0}}</td>
+        <td>{{day.main.temp_max | number:0}}</td>
+        <td>{{day.weather[0].description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

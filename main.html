@@ -1,0 +1,32 @@
+<div>
+  <div ng-show="errorMessage">
+    {{errorMessage}}
+    <br />
+    <br />
+  </div>
+  <div>
+    <form>
+      <input type="search" placeholder="Enter City" ng-model="cityName" />
+      <input type="submit" value="search" ng-click="search(cityName)" />
+    </form>
+    <br />
+  </div>
+  <div>
+    <table ng-show="forecast">
+      <tbody>
+        <tr>
+          <td>City</td>
+          <td>Min</td>
+          <td>Max</td>
+          <td>Description</td>
+        </tr>
+        <tr ng-repeat="city in forecast">
+          <td><a href="#/cityForecast/{{city.id}}">{{city.name}}</a></td>
+          <td>{{city.main.temp_min | number:0}}</td>
+          <td>{{city.main.temp_max | number:0}}</td>
+          <td>{{city.weather[0].description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
